@@ -60,9 +60,6 @@ RUN mkdir /root/.ssh
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ADD docker_start.sh docker_start.sh
-RUN chmod 755 docker_start.sh && chown root:root docker_start.sh
-
 EXPOSE 22 80
 
 ENTRYPOINT ["/usr/bin/supervisord"]
