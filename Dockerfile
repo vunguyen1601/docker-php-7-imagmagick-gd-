@@ -4,6 +4,7 @@ MAINTAINER VuNT "nguyenthachvu.vn@gmail.com"
 
 ENV DEBIAN_FRONTEND=noninteractive
 USER root
+WORKDIR /var/www/html
 
 RUN set -eux; \
     apt-get update; \
