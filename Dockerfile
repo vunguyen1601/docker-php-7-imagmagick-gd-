@@ -62,5 +62,7 @@ RUN apt-get clean && \
 
 EXPOSE 22 80
 VOLUME /var/www/html
+ENV APACHE_RUN_USER root
+ENV APACHE_RUN_GROUP root
 
 ENTRYPOINT ["/usr/bin/supervisord"]
