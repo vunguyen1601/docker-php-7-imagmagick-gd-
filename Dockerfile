@@ -4,7 +4,6 @@ MAINTAINER VuNT "nguyenthachvu.vn@gmail.com"
 
 ENV DEBIAN_FRONTEND=noninteractive
 USER root
-WORKDIR /var/www/html
 
 RUN set -eux; \
     apt-get update; \
@@ -62,5 +61,6 @@ RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 EXPOSE 22 80
+VOLUME /var/www/html
 
 ENTRYPOINT ["/usr/bin/supervisord"]
