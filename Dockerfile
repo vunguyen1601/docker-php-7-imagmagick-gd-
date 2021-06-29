@@ -23,8 +23,8 @@ RUN set -eux; \
 RUN pecl install imagick && docker-php-ext-enable imagick
 
 RUN set -eux; \
-    docker-php-ext-install pdo pdo_mysql mysqli; \
-    docker-php-ext-configure gd \
+    docker-php-ext-install pdo pdo_mysql mysqli intl; \
+    docker-php-ext-configure intl gd \
             --prefix=/usr \
             --with-jpeg \
             --with-freetype;
