@@ -31,6 +31,14 @@ RUN set -eux; \
 RUN docker-php-ext-configure intl
 RUN docker-php-ext-install intl            
 
+RUN echo "expose_php = Off\n" \
+#         "memory_limit = 500M\n" \
+#         "upload_max_filesize = 100M\n" \
+#         "post_max_size = 100M\n" \
+#         "max_execution_time = 600\n" \
+         > /usr/local/etc/php/conf.d/configurations.ini
+
 RUN a2enmod rewrite;
+
 
 EXPOSE 80
